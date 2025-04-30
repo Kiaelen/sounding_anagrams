@@ -1,0 +1,64 @@
+seed: 421134
+log_dir: results
+task_name: test
+output_dir: ${log_dir}/${task_name}
+trainer:
+  num_samples: 1
+  num_inference_steps: 100
+  img_height: 256
+  img_width: 1024
+  cutoff_latent: false
+  crop_image: false
+  use_colormap: true
+  reduction: mean
+  views:
+  - identity
+  - rotate_cw
+  enable_rank: false
+  enable_clip_rank: false
+  top_ranks: 0.2
+  anagram_balance_weight:
+  - 0.25
+  - 0.75
+  image_prompt:
+  - minivans, lithograph style, grayscale
+  - a painting of a castle, lithograph style, grayscale
+  image_neg_prompt: ''
+  image_guidance_scale: 10.0
+  image_start_step: 5
+  audio_prompt: car horn
+  audio_neg_prompt: ''
+  audio_guidance_scale: 10.0
+  audio_start_step: 0
+  audio_weight: 0.5
+audio_diffusion_guidance:
+  _target_: src.guidance.auffusion.AuffusionGuidance
+  repo_id: auffusion/auffusion-full-no-adapter
+  fp16: true
+  t_range:
+  - 0.02
+  - 0.98
+image_diffusion_guidance:
+  _target_: src.guidance.stable_diffusion.StableDiffusionGuidance
+  repo_id: runwayml/stable-diffusion-v1-5
+  fp16: true
+  t_consistent: true
+  t_range:
+  - 0.02
+  - 0.98
+diffusion_scheduler:
+  _target_: diffusers.DDIMScheduler.from_pretrained
+  pretrained_model_name_or_path: runwayml/stable-diffusion-v1-5
+  subfolder: scheduler
+  torch_dtype: torch.float16
+latent_transformation:
+  _target_: src.transformation.identity.NaiveIdentity
+audio_evaluator:
+  _target_: src.evaluator.clap.CLAPEvaluator
+visual_evaluator:
+  _target_: src.evaluator.clip.CLIPEvaluator
+extras:
+  ignore_warnings: true
+  print_config: true
+clip_score: null
+clap_score: null
