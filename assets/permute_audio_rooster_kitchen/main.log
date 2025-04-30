@@ -1,0 +1,22 @@
+[2025-03-17 16:31:53,051][__main__][INFO] - [rank: 0] Instantiating Image Diffusion model <src.guidance.stable_diffusion.StableDiffusionGuidance>
+[2025-03-17 16:31:58,731][__main__][INFO] - [rank: 0] Instantiating Audio Diffusion guidance model <src.guidance.auffusion.AuffusionGuidance>
+[2025-03-17 16:32:03,912][py.warnings][WARNING] - /usr/local/lib/python3.11/dist-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+
+[2025-03-17 16:32:04,807][__main__][INFO] - [rank: 0] Instantiating joint diffusion scheduler <diffusers.DDIMScheduler.from_pretrained>
+[2025-03-17 16:32:04,912][__main__][INFO] - [rank: 0] Instantiating latent transformation <src.transformation.identity.NaiveIdentity>
+[2025-03-17 16:32:04,913][__main__][INFO] - [rank: 0] Instantiating audio evaluator <src.evaluator.clap.CLAPEvaluator>
+[2025-03-17 16:32:07,784][__main__][INFO] - [rank: 0] Instantiating visual evaluator <src.evaluator.clip.CLIPEvaluator>
+[2025-03-17 16:32:08,891][__main__][INFO] - [rank: 0] Starting sampling!
+[2025-03-17 16:32:28,462][__main__][INFO] - [rank: 0] Finished!
+[2025-03-17 16:33:29,989][__main__][INFO] - [rank: 0] Instantiating Image Diffusion model <src.guidance.stable_diffusion.StableDiffusionGuidance>
+[2025-03-17 16:33:35,835][__main__][INFO] - [rank: 0] Instantiating Audio Diffusion guidance model <src.guidance.auffusion.AuffusionGuidance>
+[2025-03-17 16:33:39,545][py.warnings][WARNING] - /usr/local/lib/python3.11/dist-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+
+[2025-03-17 16:33:40,433][__main__][INFO] - [rank: 0] Instantiating joint diffusion scheduler <diffusers.DDIMScheduler.from_pretrained>
+[2025-03-17 16:33:40,533][__main__][INFO] - [rank: 0] Instantiating latent transformation <src.transformation.identity.NaiveIdentity>
+[2025-03-17 16:33:40,534][__main__][INFO] - [rank: 0] Instantiating audio evaluator <src.evaluator.clap.CLAPEvaluator>
+[2025-03-17 16:33:41,827][__main__][INFO] - [rank: 0] Instantiating visual evaluator <src.evaluator.clip.CLIPEvaluator>
+[2025-03-17 16:33:43,452][__main__][INFO] - [rank: 0] Starting sampling!
+[2025-03-17 16:34:02,858][__main__][INFO] - [rank: 0] Finished!

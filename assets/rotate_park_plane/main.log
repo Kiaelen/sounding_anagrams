@@ -1,0 +1,77 @@
+[2025-03-17 14:52:50,114][__main__][INFO] - [rank: 0] Instantiating Image Diffusion model <src.guidance.stable_diffusion.StableDiffusionGuidance>
+[2025-03-17 14:52:55,956][__main__][INFO] - [rank: 0] Instantiating Audio Diffusion guidance model <src.guidance.auffusion.AuffusionGuidance>
+[2025-03-17 14:52:59,733][py.warnings][WARNING] - /usr/local/lib/python3.11/dist-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+
+[2025-03-17 14:53:00,632][__main__][INFO] - [rank: 0] Instantiating joint diffusion scheduler <diffusers.DDIMScheduler.from_pretrained>
+[2025-03-17 14:53:00,741][__main__][INFO] - [rank: 0] Instantiating latent transformation <src.transformation.identity.NaiveIdentity>
+[2025-03-17 14:53:00,742][__main__][INFO] - [rank: 0] Instantiating audio evaluator <src.evaluator.clap.CLAPEvaluator>
+[2025-03-17 14:53:02,027][__main__][INFO] - [rank: 0] Instantiating visual evaluator <src.evaluator.clip.CLIPEvaluator>
+[2025-03-17 14:53:03,136][__main__][INFO] - [rank: 0] Starting sampling!
+[2025-03-17 14:53:40,353][__main__][INFO] - [rank: 0] Finished!
+[2025-03-17 15:03:57,426][__main__][INFO] - [rank: 0] Instantiating Image Diffusion model <src.guidance.stable_diffusion.StableDiffusionGuidance>
+[2025-03-17 15:04:03,158][__main__][INFO] - [rank: 0] Instantiating Audio Diffusion guidance model <src.guidance.auffusion.AuffusionGuidance>
+[2025-03-17 15:04:06,797][py.warnings][WARNING] - /usr/local/lib/python3.11/dist-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+
+[2025-03-17 15:04:07,719][__main__][INFO] - [rank: 0] Instantiating joint diffusion scheduler <diffusers.DDIMScheduler.from_pretrained>
+[2025-03-17 15:04:07,817][__main__][INFO] - [rank: 0] Instantiating latent transformation <src.transformation.identity.NaiveIdentity>
+[2025-03-17 15:04:07,819][__main__][INFO] - [rank: 0] Instantiating audio evaluator <src.evaluator.clap.CLAPEvaluator>
+[2025-03-17 15:04:11,164][__main__][INFO] - [rank: 0] Instantiating visual evaluator <src.evaluator.clip.CLIPEvaluator>
+[2025-03-17 15:04:12,204][__main__][INFO] - [rank: 0] Starting sampling!
+[2025-03-17 15:04:50,773][__main__][INFO] - [rank: 0] Finished!
+[2025-03-17 15:08:02,109][__main__][INFO] - [rank: 0] Instantiating Image Diffusion model <src.guidance.stable_diffusion.StableDiffusionGuidance>
+[2025-03-17 15:08:07,725][__main__][INFO] - [rank: 0] Instantiating Audio Diffusion guidance model <src.guidance.auffusion.AuffusionGuidance>
+[2025-03-17 15:08:11,457][py.warnings][WARNING] - /usr/local/lib/python3.11/dist-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+
+[2025-03-17 15:08:12,359][__main__][INFO] - [rank: 0] Instantiating joint diffusion scheduler <diffusers.DDIMScheduler.from_pretrained>
+[2025-03-17 15:08:12,464][__main__][INFO] - [rank: 0] Instantiating latent transformation <src.transformation.identity.NaiveIdentity>
+[2025-03-17 15:08:12,465][__main__][INFO] - [rank: 0] Instantiating audio evaluator <src.evaluator.clap.CLAPEvaluator>
+[2025-03-17 15:08:13,704][__main__][INFO] - [rank: 0] Instantiating visual evaluator <src.evaluator.clip.CLIPEvaluator>
+[2025-03-17 15:08:15,391][__main__][INFO] - [rank: 0] Starting sampling!
+[2025-03-17 15:08:53,864][__main__][INFO] - [rank: 0] Finished!
+[2025-03-17 15:10:57,217][__main__][INFO] - [rank: 0] Instantiating Image Diffusion model <src.guidance.stable_diffusion.StableDiffusionGuidance>
+[2025-03-17 15:11:02,996][__main__][INFO] - [rank: 0] Instantiating Audio Diffusion guidance model <src.guidance.auffusion.AuffusionGuidance>
+[2025-03-17 15:11:06,800][py.warnings][WARNING] - /usr/local/lib/python3.11/dist-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+
+[2025-03-17 15:11:07,689][__main__][INFO] - [rank: 0] Instantiating joint diffusion scheduler <diffusers.DDIMScheduler.from_pretrained>
+[2025-03-17 15:11:07,785][__main__][INFO] - [rank: 0] Instantiating latent transformation <src.transformation.identity.NaiveIdentity>
+[2025-03-17 15:11:07,786][__main__][INFO] - [rank: 0] Instantiating audio evaluator <src.evaluator.clap.CLAPEvaluator>
+[2025-03-17 15:11:09,030][__main__][INFO] - [rank: 0] Instantiating visual evaluator <src.evaluator.clip.CLIPEvaluator>
+[2025-03-17 15:11:10,326][__main__][INFO] - [rank: 0] Starting sampling!
+[2025-03-17 15:11:49,212][__main__][INFO] - [rank: 0] Finished!
+[2025-03-17 15:12:37,848][__main__][INFO] - [rank: 0] Instantiating Image Diffusion model <src.guidance.stable_diffusion.StableDiffusionGuidance>
+[2025-03-17 15:12:43,711][__main__][INFO] - [rank: 0] Instantiating Audio Diffusion guidance model <src.guidance.auffusion.AuffusionGuidance>
+[2025-03-17 15:12:47,463][py.warnings][WARNING] - /usr/local/lib/python3.11/dist-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+
+[2025-03-17 15:12:48,364][__main__][INFO] - [rank: 0] Instantiating joint diffusion scheduler <diffusers.DDIMScheduler.from_pretrained>
+[2025-03-17 15:12:48,463][__main__][INFO] - [rank: 0] Instantiating latent transformation <src.transformation.identity.NaiveIdentity>
+[2025-03-17 15:12:48,464][__main__][INFO] - [rank: 0] Instantiating audio evaluator <src.evaluator.clap.CLAPEvaluator>
+[2025-03-17 15:12:49,741][__main__][INFO] - [rank: 0] Instantiating visual evaluator <src.evaluator.clip.CLIPEvaluator>
+[2025-03-17 15:12:50,809][__main__][INFO] - [rank: 0] Starting sampling!
+[2025-03-17 15:13:29,695][__main__][INFO] - [rank: 0] Finished!
+[2025-03-17 15:14:35,441][__main__][INFO] - [rank: 0] Instantiating Image Diffusion model <src.guidance.stable_diffusion.StableDiffusionGuidance>
+[2025-03-17 15:14:41,373][__main__][INFO] - [rank: 0] Instantiating Audio Diffusion guidance model <src.guidance.auffusion.AuffusionGuidance>
+[2025-03-17 15:14:45,049][py.warnings][WARNING] - /usr/local/lib/python3.11/dist-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+
+[2025-03-17 15:14:45,947][__main__][INFO] - [rank: 0] Instantiating joint diffusion scheduler <diffusers.DDIMScheduler.from_pretrained>
+[2025-03-17 15:14:46,049][__main__][INFO] - [rank: 0] Instantiating latent transformation <src.transformation.identity.NaiveIdentity>
+[2025-03-17 15:14:46,050][__main__][INFO] - [rank: 0] Instantiating audio evaluator <src.evaluator.clap.CLAPEvaluator>
+[2025-03-17 15:14:47,813][__main__][INFO] - [rank: 0] Instantiating visual evaluator <src.evaluator.clip.CLIPEvaluator>
+[2025-03-17 15:14:48,854][__main__][INFO] - [rank: 0] Starting sampling!
+[2025-03-17 15:15:27,847][__main__][INFO] - [rank: 0] Finished!
+[2025-03-17 15:16:35,243][__main__][INFO] - [rank: 0] Instantiating Image Diffusion model <src.guidance.stable_diffusion.StableDiffusionGuidance>
+[2025-03-17 15:16:40,992][__main__][INFO] - [rank: 0] Instantiating Audio Diffusion guidance model <src.guidance.auffusion.AuffusionGuidance>
+[2025-03-17 15:16:44,752][py.warnings][WARNING] - /usr/local/lib/python3.11/dist-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+
+[2025-03-17 15:16:45,647][__main__][INFO] - [rank: 0] Instantiating joint diffusion scheduler <diffusers.DDIMScheduler.from_pretrained>
+[2025-03-17 15:16:45,751][__main__][INFO] - [rank: 0] Instantiating latent transformation <src.transformation.identity.NaiveIdentity>
+[2025-03-17 15:16:45,752][__main__][INFO] - [rank: 0] Instantiating audio evaluator <src.evaluator.clap.CLAPEvaluator>
+[2025-03-17 15:16:47,034][__main__][INFO] - [rank: 0] Instantiating visual evaluator <src.evaluator.clip.CLIPEvaluator>
+[2025-03-17 15:16:48,160][__main__][INFO] - [rank: 0] Starting sampling!
+[2025-03-17 15:17:26,892][__main__][INFO] - [rank: 0] Finished!
