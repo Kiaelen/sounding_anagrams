@@ -2,7 +2,7 @@
 
 **Anagram + Sound** in a single image!
 
-Adapted from [image-that-sound](https://github.com/IFICL/images-that-sound) and [visual anagrams](https://github.com/dangeng/visual_anagrams).
+Adapted from [image-that-sound](https://github.com/IFICL/images-that-sound) and [visual_anagrams](https://github.com/dangeng/visual_anagrams).
 <hr>
 
 ## Method
@@ -26,76 +26,101 @@ Notations:
 - $\epsilon_{\theta_s}$ -> audio denoisor
 - $\epsilon_{\theta_i}$ -> image denoisor
 
-This method works for all invertible views by the linearity of the denoising process.
+This works for all invertible views by the linearity of the denoising process.
 
-## Results
+The method only produces greyscale images. To obtain colorized images, we use similar idea from above: we make our diffusion model think that it is generating a **color hybrid image** and use the greyscale image as reference (like impainting).
 
-Download **audio** results in [assets](https://github.com/Kiaelen/Sounding-Anagrams/tree/main/assets).
+## Examples
 
-### Gaussian Filter Example
+Download **audio** results from [assets](https://github.com/Kiaelen/sounding_anagrams/tree/main/assets).
 
-  **image_prompt:**
-  - a castle with bell towers, grayscale
-  - an antique model car, grayscale
+### Anagram type: Patch permutation
 
-**audio_prompt:** bird chirping
+ **image_prompt:**
+  - (left) painting of cats, lithograph style, grayscale
+  - (right) painting of a dogs, lithograph style, grayscale
 
+**audio_prompt:** 
+  - (left) cat meow
+  - (right) dog bark
+    
 <div align="center">
-  <img width="100%" src="assets\gaussian\car-castle-bird\view0.img.png">
-  <img width="30%" src="assets\gaussian\car-castle-bird\view1.img.png">
+  <img width="49%" src="assets/permute_cat_dog/results/example_001/image/identity.png">
+  <img width="49%" src="assets/permute_cat_dog/results/example_001/image/patch_permute.png">
 </div>
 
-### Patch Permute Example
+ **image_prompt:**
+  - (left) painting of violin, lithograph style, grayscale
+  - (right) painting of cows, lithograph style, grayscale
 
-  **image_prompt:**
-  - painting of trees, lithograph style, grayscale
-  - painting of castles, lithograph style, grayscale
-
-**audio_prompt:** bell ringing
-
+**audio_prompt:** 
+  - (left) violin music
+  - (right) cow mooing
+    
 <div align="center">
-  <img width="100%" src="assets\permute\tree-castle-bell\view0.img.png">
-  <img width="100%" src="assets\permute\tree-castle-bell\view1.img.png">
+  <img width="49%" src="assets/permute_instrument_cow/results/example_001/image/identity.png">
+  <img width="49%" src="assets/permute_instrument_cow/results/example_001/image/patch_permute.png">
 </div>
 
-### Patch Rotate Example
+### Anagram type: Patch rotation (90 degrees)
 
   **image_prompt:**
-  - painting of a garden, lithograph style, grayscale
-  - paiting of a helicopter, lithograph style, grayscale ~~(the result is actually a jet plane)~~
+  - (left) painting of a park, lithograph style, grayscale
+  - (right) painting of a plane, lithograph style, grayscale
 
-**audio_prompt:** bird chirping
-
+**audio_prompt:** 
+  - (left) bird chirping
+  - (right) airline fly by
+    
 <div align="center">
-  <img width="100%" src="assets\rotate\trees-helicopter-bird\view0.img.png">
-  <img width="100%" src="assets\rotate\trees-helicopter-bird\view1.img.png">
+  <img width="49%" src="assets/rotate_park_plane/results/example_001/image/identity.png">
+  <img width="49%" src="assets/rotate_park_plane/results/example_001/image/rotate_cw.png">
 </div>
 
-## Main paramters to tune in [config](https://github.com/Kiaelen/Sounding-Anagrams/blob/main/configs/main_denoise/main.yaml).trainer
+  **image_prompt:**
+  - (left) paiting of car, lithograph style, grayscale
+  - (right) painting of bell tower, lithograph style, grayscale
 
-<code> views </code> This is the anagram type you want to create. See /visual_anagrams/\_\_init\_\_.py for type list.
+**audio_prompt:** 
+  - (left) car beeping
+  - (right) bell ringing
+    
+<div align="center">
+  <img width="49%" src="assets/rotate_car_belltower/results/example_001/image/identity.png">
+  <img width="49%" src="assets/rotate_car_belltower/results/example_001/image/rotate_cw.png">
+</div>
 
-<code> anagram_balance_weight </code>
+### Colorization
 
-<code> image_prompt </code>
+With exactly the same prompts as above:
 
-<code> audio_prompt </code>
+Patch permutation example:
 
-<code> audio_weight </code>
+<div align="center">
+  <img width="49%" src="assets/permute_cat_dog/results/example_001/colored_image/0.identity.png">
+  <img width="49%" src="assets/permute_cat_dog/results/example_001/colored_image/0.patch_permute.png">
+</div>
+
+Patch rotation example:
+
+<div align="center">
+  <img width="49%" src="assets/rotate_park_plane/results/example_001/colored_image/0.identity.png">
+  <img width="49%" src="assets/rotate_park_plane/results/example_001/colored_image/0.rotate_cw.png">
+</div>
+
+## Main paramters to tune in [config](configs/main_config/main.yaml).trainer
+
+<code> views </code> This is the anagram type you want to create. See **VIEW_MAP** dictionary in [this file](visual_anagrams/views/__init__.py) for type list.
+
+<code> anagram_image_weight & anagram_audio_weight </code> This is to control the visual/audial emphasis on **different views**. Usually a slightly biased weight produces better results.
+
+<code> image_prompt & audio_prompt </code> This is the description of the visual/audial content you want to generate.
+
+<code> audio_weight </code> This is to control the visual/audial balance **in the same view**. To generate hybrid image without engraved spectrogram, set this parameter to 0.
 <hr>
 
-## Limitations
-
-Good results extremely hard to obtain. Have to painstakingly tune hyperparameters for half an hour on average to obtain a relatively good sounding anagram.
-
-VAE Decoder cannot preserve boundaries properly as can be seen in the patch permute examples.
-
-Black strip identifid in generated images as Auffusion denoising results.
-
-### Why not colorized
-
-Colorization as post-processing tend to yield bad results, as shown in experiments, especially for the task of sounding-anagram generation that involves intricate semantics.
-
 ## How to run
+
+You can use the following demo for testing.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Cj_SOwWNtn4z0XPShqs0Qu-Ib4lMhRis?usp=sharing)
